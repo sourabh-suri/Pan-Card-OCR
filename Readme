@@ -1,0 +1,30 @@
+
+1. Using Vott for data tagging and labeling.
+2. Converting the labelled data to Yolo v3 Format.
+3. Done training on Darkent framework, with mean average precision as stopping criteria (-map flag). 
+The google notebook file for darknet training is attached herein in /OCR_for_PanCards/DarknetModel/YOLOv3.ipynb
+	$ darknet.exe detector train data/obj.data yolo-obj.cfg "last_executed" -map
+
+This has provided with, best weights based on MAP score- 10k is that iteration number for my data set.
+
+The weight file is provided as yolov3_custom_best_10000.weights. The google drive link to file is shared.
+
+Link: https://drive.google.com/open?id=1r3xue0pzWaiwODLKXDmE2bGdz42e78vx
+
+OCR wrappers for Python- pytesseract is based on Googles OCR API and tesseract isn't. I would suggest using pytesseract based on the fact that it will be maintained better, but with that being said, try them both out and use whichever works better for you. 
+
+I have used both OCR wrapers i.e. Tesseract and Py-tesseract and python code files are provided in /OCR_for_PanCards/PAN_OCR/MainWithPytesseract.py & /OCR_for_PanCards/PAN_OCR/MainWithTesseract.py respectively.
+4. To run the above main.py files, follow the instructions-
+
+Using python3 and py-tesseract for python3.
+Clone the repo and then,
+
+Run
+
+$ bash ./darknet.sh
+
+$ python3 MainWithPytesseract.py -d -t --weights yolov3_custom_best_10000.weights
+
+Keep your images at /OCR_for_PanCards/PAN_OCR/pancards folder and see the csv file at /OCR_for_PanCards/PAN_OCR/output folder.
+
+

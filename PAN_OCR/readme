@@ -1,0 +1,8 @@
+Using python3 and py-tesseract for python3.
+
+Run
+
+$ bash ./darknet.sh
+
+$ python3 MainWithPytesseract.py -d -t --weights yolov3_custom_best_10000.weights
+
