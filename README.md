@@ -68,8 +68,8 @@ set network size width=416 height=416 or any value multiple of 32
 change line classes=80 to your number of objects  
 change [filters=255] to filters=(classes + 5)x3  
 
-<h2>Overview</h2> 
-Stopping Criteria
+<h2>Stopping Criteria</h2> 
+
 When you see that average loss 0.xxxxxx avg no longer decreases at many iterations then you should stop training. mAP indicator is better than Loss, so train while mAP increases.  
 IoU (intersect over union) - average instersect over union of objects and detections for a certain threshold = 0.24  
 mAP (mean average precision) - mean value of average precisions for each class, where average precision is average value of 11 points on PR-curve for each possible threshold (each probability of detection) for the same class (Precision-Recall in terms of PascalVOC, where Precision=TP/(TP+FP) and Recall=TP/(TP+FN))  
