@@ -1,20 +1,9 @@
 <h1>OCR using YOLO and Py-Tesseract</h1>  
 
 <h2>Overview</h2> 
-Optical Character Recognition (OCR) is used to convert scanned
-images to text. Building a OCR requires regions of an image detection.
-These detections are such that the selective text from the original
-image can be obtained. Thus, after the text is detected, its recognition
-is required.    
-Test Detection consists of finding the bounding box and classifying it.
-YOLO predicts both the boundary box and the class at the same time.
-It is much faster but there is a tradeoff between speed and accuracy.
-However, it has good enough accuracy for the application of PAN Card
-OCR.    
-After text detection, Py-tesseract (Python-tesseract) or Tesseract OCR
-can be used as an open-source text recognizer. The difference
-between two is that the OCR wrappers for Python-tesseract is based
-on Googles OCR API while Tesseract OCR isn't.  
+
+Fintech organization needs to manage customer's documents by compiling personal information. It is then verified from Indian government.These KYC documents include PAN, Adhaar etc. The process of managing KYC documents manually is time consuming and costly. We attempt to solve this problem by automating this process using AI. So the developed application will take scanned images as input and provide information about the customer in a formatted document which a computer can understand. Althugh there are many open-source OCR wrappers available online, we can't use them directly for filling automated KYC forms. Henceforth, a tailor-made solution is required to increase the efficacy of the quality check process. The formatted excel document is further evaluated for verification from Indian govt by hitting their api.   
+The OCR stands for Optical Character Recognition. It is used to read text from images such as a scanned document or a picture.We used Vott for data tagging and labeling. Then, converting the labelled data to Yolo v3 Format. The training is done on the Darknet framework to crop regions from the original image. Finally, the OCR wrapper, Py-tesseract is used to obtain selective text. 
 
 
 ![PAN1](PAN_OCR/pancards/PAN-Card.jpg) 
@@ -32,6 +21,27 @@ Although there are many open-source ML-based OCR wrappers available online, but 
 <h2>Tech Stack</h2> 
       
 Python, DNN, Darknet framework, GPU training, Computer Vision, VoTT data annotation tool, Image augmentation library called Albumentations,  
+
+
+<h2>Working</h2>   
+
+A pipelined python script to convert scanned documents in the form of images from users to a formatted text.    
+
+Building a OCR requires regions of an image detection and its recognition.  
+These detections are such that the selective text from the original
+image can be obtained. Thus, after the text is detected, its recognition
+is required.      
+
+Test Detection consists of finding the bounding box and classifying it.
+YOLO predicts both the boundary box and the class at the same time.
+It is much faster but there is a tradeoff between speed and accuracy.
+However, it has good enough accuracy for the application of PAN Card
+OCR.    
+
+After text detection, Py-tesseract (Python-tesseract) or Tesseract OCR
+can be used as an open-source text recognizer. The difference
+between two is that the OCR wrappers for Python-tesseract is based
+on Googles OCR API while Tesseract OCR isn't.
 
 <h2>Challenges</h2> 
   
